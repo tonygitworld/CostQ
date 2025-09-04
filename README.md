@@ -1,16 +1,3 @@
-# CostQ
-================================
-
-Use Amazon Q for Cloud Cost Optimization
-
-* `README.md`（英文，默认）
-* `README.zh-CN.md`（中文）
-* `README.ja.md`（日文）
-
----
-
-## `README.md` (English – default)
-
 # CostQ — Use Amazon Q for Cloud Cost Optimization
 
 [中文](./README.zh-CN.md) | [日本語](./README.ja.md)
