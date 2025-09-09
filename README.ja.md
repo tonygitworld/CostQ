@@ -40,22 +40,13 @@
 
 ## はじめかた
 
-1. **データ準備**：Cost Explorer / Compute Optimizer などから CSV をエクスポート（必要ならマスキング）。
+1. **データ準備**： [handbook/runbook.ja.md](handbook/runbook.ja.md) の手順に従って必要な権限を作成し、Amazon Q をインストールして、次のステップに備えてください。
 2. **言語選択**：**Amazon Q** で `prompts/ja` を使用し、CSV を添付。
 3. **ドラフト生成**：Q に以下を依頼
 
    * **経営向け 1 ページ要約**（トレンド、主要ドライバ、節約見込み）。
    * **30/60/90 日計画**（SP/RI、リサイズ、ストレージ階層化、データ転送料）。
    * **実行ランブック**（担当、手順、検証ポイント、ロールバック）。
-4. **レポート生成（任意／ローカル）**
-
-   ```bash
-   python scripts/generate_report.py \
-     --lang ja \
-     --inputs data/cost_explorer_*.csv data/sp_ri_*.csv \
-     --template templates/report.ja.md \
-     --out out/CostQ-Report.ja.md --pdf
-   ```
 
 ## プロンプト内容（概要）
 
