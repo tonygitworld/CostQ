@@ -22,7 +22,7 @@
 │  ├─ en/        # English prompts (C-level, FinOps, Engineering)
 │  ├─ zh-CN/     # Chinese prompts
 │  └─ ja/        # Japanese prompts
-├─ templates/
+├─ reports/
 │  ├─ report.en.md
 │  ├─ report.zh-CN.md
 │  └─ report.ja.md
@@ -30,13 +30,6 @@
 │  ├─ runbook.en.md
 │  ├─ runbook.zh-CN.md
 │  └─ runbook.ja.md
-├─ data/         # Place Cost Explorer CSV, CUR slices, exports, etc.
-├─ scripts/
-│  └─ generate_report.py   # Render language-specific reports (MD/PDF)
-├─ examples/
-│  └─ sample_inputs/       # Redacted example inputs
-└─ .github/workflows/
-   └─ generate-report.yml  # Optional CI to build artifacts
 ```
 
 ## Prerequisites

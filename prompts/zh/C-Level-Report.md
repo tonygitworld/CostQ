@@ -14,7 +14,7 @@ AWS 云成本分析任务
 
 在开始分析前，请确认以下参数
 - 目标受众：公司高层CTO（技术可行性）、CFO（财务ROI）
-- AWS Profile: MY-PROFILE
+- AWS Profile: ${YOUR_AWS_PROFILE}
 - 成本口径：Amortized Cost
 - TIMEZONE: UTC
 - 时间范围: 上个月
@@ -39,11 +39,6 @@ AWS 云成本分析任务
 - 与前一计费月**环比**：整体与服务级（Top10）
 - 环比变动最大的 5 个服务（金额降序），展示：费用、占比、主要成本项（ChargeType/UsageType/ItemDescription）。
 - 异常峰值识别：以**日均+2×标准差**为初筛，记录峰值日期与对应服务/类型。
-
-1.3 Data Transfer成本分析
-
-- 从上述服务中按照"Usage Type"单独提取**每个服务**产生的网络成本
-- 输出表：服务名称 | 网络成本类型（usage_type） | 成本 | 占比（金额降序）
 
 ## 第 2 步：智能异常检测与根因分析
 
