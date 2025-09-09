@@ -22,7 +22,7 @@
 │  ├─ ja/        # 日本語プロンプト（経営・FinOps・実行手順）
 │  ├─ en/
 │  └─ zh-CN/
-├─ templates/
+├─ reports/
 │  ├─ report.ja.md
 │  ├─ report.en.md
 │  └─ report.zh-CN.md
@@ -30,12 +30,6 @@
 │  ├─ runbook.ja.md
 │  ├─ runbook.en.md
 │  └─ runbook.zh-CN.md
-├─ data/
-├─ scripts/
-│  └─ generate_report.py
-├─ examples/
-└─ .github/workflows/
-   └─ generate-report.yml
 ```
 
 ## 前提

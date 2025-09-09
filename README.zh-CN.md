@@ -22,7 +22,7 @@
 │  ├─ zh-CN/     # 中文 Prompt（管理层/FinOps/工程落地）
 │  ├─ en/
 │  └─ ja/
-├─ templates/
+├─ reports/
 │  ├─ report.zh-CN.md
 │  ├─ report.en.md
 │  └─ report.ja.md
@@ -30,12 +30,6 @@
 │  ├─ runbook.zh-CN.md
 │  ├─ runbook.en.md
 │  └─ runbook.ja.md
-├─ data/
-├─ scripts/
-│  └─ generate_report.py
-├─ examples/
-└─ .github/workflows/
-   └─ generate-report.yml
 ```
 
 ## 前置条件
