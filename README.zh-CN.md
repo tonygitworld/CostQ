@@ -40,22 +40,13 @@
 
 ## 快速开始
 
-1. **准备数据**：从 Cost Explorer/Compute Optimizer 导出 CSV（必要时打码/脱敏）。
+1. **准备Amazon Q**： 按照[handbook/runbook.zh-CN.md](handbook/runbook.zh-CN.md)的操作指南创建相关权限并安装Amazon Q，为接下来做好准备。
 2. **选择语言**：在 **Amazon Q** 中使用 `prompts/zh-CN` 的 Prompt，并附上数据文件。
 3. **生成初稿**：让 Q 产出
 
    * **管理层摘要**：趋势、成本驱动、可落地节省空间（量化）。
    * **30/60/90 天优化计划**：SP/RI、规格与副本数调整、存储分层、数据传输等。
    * **工程执行手册**：责任人、步骤、验证点与回滚。
-4. **渲染报告（可选，本地）**
-
-   ```bash
-   python scripts/generate_report.py \
-     --lang zh-CN \
-     --inputs data/cost_explorer_*.csv data/sp_ri_*.csv \
-     --template templates/report.zh-CN.md \
-     --out out/CostQ-Report.zh-CN.md --pdf
-   ```
 
 ## Prompt 内容概览
 

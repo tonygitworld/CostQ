@@ -40,8 +40,8 @@
 
 ## Quick Start
 
-1. **Prepare data**
-   Export CSV from Cost Explorer and (optionally) Compute Optimizer, SP/RI coverage & utilization.
+1. **Prepare Amazon Q**
+   Follow the instructions in [handbook/runbook.en.md](handbook/runbook.en.md) to create the necessary permissions and install Amazon Q, getting everything ready for the next steps.
 2. **Pick a language**
    Use `prompts/en` (or `zh-CN`, `ja`) prompts in **Amazon Q**, attach relevant CSV (redacted if needed).
 3. **Generate a draft**
@@ -50,15 +50,6 @@
    * Produce a **C-level summary** (cost trends, key drivers, savings potential).
    * Propose a **30/60/90-day plan** (SP/RI coverage, rightsizing, storage lifecycle, data transfer).
    * Output an **engineering runbook** (owners, steps, metrics).
-4. **Render a report** (optional, local)
-
-   ```bash
-   python scripts/generate_report.py \
-     --lang en \
-     --inputs data/cost_explorer_*.csv data/sp_ri_*.csv \
-     --template templates/report.en.md \
-     --out out/CostQ-Report.en.md --pdf
-   ```
 
 ## What’s Inside (Prompts Overview)
 
