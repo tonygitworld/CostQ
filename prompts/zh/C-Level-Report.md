@@ -14,7 +14,7 @@ AWS 云成本分析任务
 
 在开始分析前，请确认以下参数
 - 目标受众：公司高层CTO（技术可行性）、CFO（财务ROI）
-- AWS Profile: MY-PROFILE
+- AWS Profile: ${YOUR_AWS_PROFILE}
 - 成本口径：Amortized Cost
 - TIMEZONE: UTC
 - 时间范围: 上个月
