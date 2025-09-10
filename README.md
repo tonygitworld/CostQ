@@ -1,93 +1,73 @@
-# CostQ — Use Amazon Q for Cloud Cost Optimization
+# CostQ — Cloud Cost Optimization with Amazon Q
 
-[中文](./README.zh-CN.md) | [日本語](./README.ja.md)
+[English](./README.md) | [日本語](./README.ja.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
-**CostQ** is an open-source project that shows how to leverage **Amazon Q** to analyze AWS spend and drive **actionable cost optimization**. It ships battle-tested **prompts** (Chinese / English / Japanese), **report templates** per language, and an **execution runbook** so teams can produce C-level summaries and engineering playbooks in minutes.
+**CostQ** is an open-source project that demonstrates how to use **Amazon Q** to analyze AWS bills and generate **actionable cost optimization reports**. The project provides **Chinese/English/Japanese** **prompt templates**, **report templates**, and **execution handbooks**, helping you quickly understand cloud cost structures and optimization opportunities with Amazon Q.
 
 ## Why CostQ
 
-* **Outcome-focused**: From executive summary → optimization plan → execution checklist.
-* **Multilingual**: Prompts & reports in **EN / 中文 / 日本語**.
-* **Repeatable**: Opinionated folder structure & CI to generate reports.
-* **Pluggable data**: Works with Cost Explorer exports, CUR slices, Compute Optimizer, SP/RI utilization reports, S3/EC2 metrics, etc.
+* **Results-Oriented**: Executive summary → Optimization plan → Execution checklist.
+* **Tri-lingual Support**: **Chinese / English / Japanese** prompts and reports.
+* **Plug-and-Play Data**: Integrates with APIs such as Cost Explorer, Cost Optimization Hub, Compute Optimizer, SP/RI coverage & utilization, S3/EC2 monitoring metrics.
 
 ## Repository Structure
 
 ```
 .
-├─ prompts/
-│  ├─ en/        # English prompts (C-level, FinOps, Engineering)
-│  ├─ zh-CN/     # Chinese prompts
-│  └─ ja/        # Japanese prompts
-├─ reports/
+├─ prompts/       # Prompt templates for different roles
+│  ├─ zh-CN/     
+│  ├─ en/
+│  └─ ja/
+├─ reports/       # Cost analysis report templates
+│  ├─ report.zh-CN.md   
 │  ├─ report.en.md
-│  ├─ report.zh-CN.md
 │  └─ report.ja.md
-├─ handbook/
+├─ handbook/      # Amazon Q installation and execution handbook
+│  ├─ runbook.zh-CN.md  
 │  ├─ runbook.en.md
-│  ├─ runbook.zh-CN.md
 │  └─ runbook.ja.md
 ```
 
 ## Prerequisites
 
-* AWS account(s) with Cost Explorer enabled; optional **CUR** (Cost & Usage Report).
-* Access to **Amazon Q** (Developer/Business).
-* Python 3.10+ if you plan to use the local `scripts/generate_report.py`.
+* **Cost Explorer** enabled.
+* **Amazon Q CLI** installed and configured.
 
 ## Quick Start
 
-1. **Prepare Amazon Q**
-   Follow the instructions in [handbook/runbook.en.md](handbook/runbook.en.md) to create the necessary permissions and install Amazon Q, getting everything ready for the next steps.
-2. **Pick a language**
-   Use `prompts/en` (or `zh-CN`, `ja`) prompts in **Amazon Q**, attach relevant CSV (redacted if needed).
-3. **Generate a draft**
-   Ask Amazon Q to:
+1. **Prepare Amazon Q**: Follow [handbook/runbook.zh-CN.md](handbook/runbook.zh-CN.md) to create permissions and install Amazon Q.
+2. **Choose a Language**: Use the `prompts/zh-CN` prompt template in **Amazon Q**.
+3. **Generate Reports**: Ask Q to produce:
+   * **Executive Report**: Cost trends, cost drivers, savings opportunities.
 
-   * Produce a **C-level summary** (cost trends, key drivers, savings potential).
-   * Propose a **30/60/90-day plan** (SP/RI coverage, rightsizing, storage lifecycle, data transfer).
-   * Output an **engineering runbook** (owners, steps, metrics).
+## Prompt Content Overview
 
-## What’s Inside (Prompts Overview)
+* **Multi-dimensional Cost Overview**: Cost efficiency metrics + cost composition.
+* **Intelligent Anomaly Detection & Root Cause Analysis**: Anomaly triggers + CloudTrail deep analysis.
+* **Optimization Strategies Based on Cost Analysis**: Identify optimization potential + recommendations.
+* **Actionable Cost Optimization Reports**
 
-* **C-Level Brief**: 1-page trend + 3 key drivers + quantified savings.
-* **FinOps Deep Dive**: Cost Categories, tagging health, SP/RI coverage & utilization, anomaly highlights.
-* **Engineering Playbook**: EC2/ASG rightsizing, GP2→GP3, S3 lifecycle & IA/Glacier, NAT egress, inter-AZ DT, CloudFront caching, RDS storage & IOPS, EKS nodegroup mix (On-Demand/Spot), autoscaling guardrails.
+## Suggested Amazon Q Usage
 
-## Suggested Workflow with Amazon Q
-
-* Start with **C-Level** prompt → validate numbers → ask Q to **justify** each top driver with dataset references.
-* Move to **FinOps** prompt → request **coverage/utilization targets** and **sensitivity analysis**.
-* Generate **Runbook** → ask for **owner matrix**, **risk/rollback**, and **verification steps**.
-
-## Automation (Optional)
-
-* **GitHub Actions** builds MD/PDF report artifacts on each push to `main` or on tag.
-* Use repository secrets to avoid committing sensitive data.
-
-## Roadmap
-
-* ☑ Multilingual prompts (EN/zh/ja)
-* ☐ Templated dashboards (Markdown → HTML/PDF)
-* ☐ CUR transformer snippets
-* ☐ Sample Cost Categories & Tagging policy kit
+* First generate an **executive summary report** → Then ask Q to **cite data evidence** for each conclusion.
+* Next generate a **cost optimization report** → Require **owners**, **risk/rollback**, and **validation metrics**.
 
 ## Security & Privacy
 
-* **Never** commit raw billing data or account IDs.
-* Redact datasets before sharing.
-* This project is **community-driven** and **not affiliated with AWS**.
+* **Do not** submit raw bills, account IDs, or other sensitive information.
+* Always anonymize before external sharing.
+* This project has **no official affiliation with AWS**, for learning and collaboration only.
 
 ## Contributing
 
-PRs welcome! Please:
+PRs are welcome! Please:
 
-* Use Conventional Commits (`feat:`, `fix:`…).
-* Add tests or example inputs where applicable.
-* Keep prompts deterministic and auditable.
+* Use Conventional Commits (e.g., `feat:`, `fix:`).
+* Add sample/test data (anonymized).
+* Keep prompts auditable and reproducible.
 
 ## License
 
